@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hang Man</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>Hang Man</h1>
+    <button type="button" name="button">Start</button>
+    <div class="word hidden">
+      <h2>The Word:</h2>
+      <h3 id="word-display"></h3>
+    </div>
+    <div class="canvas">
+      <canvas id="canvas" width="300px" height="300px"></canvas>
+    </div>
+    <div class="form hidden">
+      <form id="form" action="#" method="post">
+        <input id="letter" type="text" name="letter" maxlength="1" autocomplete="off" placeholder="What letter will you guess?">
+      </form>
+      <p id="error"></p>
+    </div>
+    <div class="guess hidden">
+      <h2>Letter's Guessed:</h2>
+      <h3 id="guess-display"></h3>
+    </div>
+    <h5 id="warning"></h5>
+    <div style="display:none;">
+        <img id="win" src="https://s-media-cache-ak0.pinimg.com/originals/e1/38/a1/e138a174c33a48931521dcc5639d4a03.png">
+        <img id="lost" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Skull_%26_crossbones.svg/622px-Skull_%26_crossbones.svg.png">
+     </div>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
