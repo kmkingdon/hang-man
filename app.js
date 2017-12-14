@@ -11,18 +11,20 @@ const letter= document.getElementById('letter');
 const guessDisplay= document.getElementById('guess-display');
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const body= document.querySelector('body');
+const startButton= document.querySelector('button');
 let warning= document.getElementById('warning');
 let wordArraySecret;
 let guess;
 
-const startButton= document.querySelector('button');
+
 
 startButton.addEventListener("click", startGame);
 
 function startGame() {
+  body.removeChild(startButton)
   let index= Math.floor(Math.random()*wordOptions.length);
   let word= wordOptions[index];
-  console.log(word);
   wordSection.classList.remove("hidden");
   formSection.classList.remove("hidden");
   guessSection.classList.remove("hidden");
@@ -182,6 +184,11 @@ function gameOver() {
   var img=document.getElementById("lost");
   ctx.drawImage(img,0,0,300,300);
   setTimeout(function(){warning.innerHTML= "";}, 3000)
+  let restart= document.createElement('button');
+  restart.innerHTML= "Play Again";
+  restart.id= "play-again";
+  restart.addEventListener('click', reload);
+  body.appendChild(restart);
 }
 
 function gameOverWin() {
@@ -190,4 +197,13 @@ function gameOverWin() {
   var img=document.getElementById("win");
   ctx.drawImage(img,0,0,300,300);
   setTimeout(function(){warning.innerHTML= "";}, 2000)
+  let restart= document.createElement('button');
+  restart.innerHTML= "Play Again";
+  restart.id= "play-again";
+  restart.addEventListener('click', reload);
+  body.appendChild(restart);
+}
+
+function reload() {
+  location.reload();
 }

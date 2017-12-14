@@ -122,6 +122,16 @@ button {
   justify-self: center;
 }
 
+#play-again {
+  font-size: 2rem;
+  grid-column: 1/end;
+  grid-row: 2/3;
+  align-self: start;
+  justify-self: center;
+  width: 12rem;
+  background-color: teal;
+}
+
 .hidden {
   display: none;
 }
