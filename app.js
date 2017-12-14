@@ -178,7 +178,7 @@ function draw() {
 
 function gameOver() {
   warning.innerHTML="You Lost!!"
-  ctx.rotate(-18*Math.PI/180);
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
   var img=document.getElementById("lost");
   ctx.drawImage(img,0,0,300,300);
   setTimeout(function(){warning.innerHTML= "";}, 3000)
@@ -186,7 +186,7 @@ function gameOver() {
 
 function gameOverWin() {
   warning.innerHTML="You Won!!";
-  ctx.rotate(-2*Math.PI/180);
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
   var img=document.getElementById("win");
   ctx.drawImage(img,0,0,300,300);
   setTimeout(function(){warning.innerHTML= "";}, 2000)
